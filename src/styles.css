@@ -142,3 +142,36 @@
     color: var(--color-foreground);
   }
 }
+
+/* Amadeus brand */
+@theme inline {
+  --color-borgona: var(--borgona);
+  --color-tiza: var(--tiza);
+  --color-grafito: var(--grafito);
+  --color-verdigris: var(--verdigris);
+  --color-peonia: var(--peonia);
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+}
+:root {
+  --borgona: #5a1420;
+  --tiza: #ecede8;
+  --grafito: #16171a;
+  --verdigris: #2f8f83;
+  --peonia: #e8b4b0;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--tiza); color: var(--grafito); font-family: var(--font-serif); }
+.bubble { border-radius: 1.5rem 1.5rem 1.5rem 6px; }
+.bubble-r { border-radius: 1.5rem 1.5rem 6px 1.5rem; }
+.dotline { background-image: radial-gradient(currentColor 1.5px, transparent 1.6px); background-size: 10px 10px; background-repeat: repeat-x; background-position: center; height: 6px; }
+@keyframes typing { 0%,60%,100% { transform: translateY(0); opacity: .5 } 30% { transform: translateY(-0.35em); opacity: 1 } }
+.typing > span { display:inline-block; animation: typing 1.4s infinite ease-in-out; }
+.typing > span:nth-child(2) { animation-delay: 180ms; }
+.typing > span:nth-child(3) { animation-delay: 360ms; }
+@keyframes enter { from { opacity:0; transform: translateX(-12px) } to { opacity:1; transform:none } }
+.voice-dot { animation: enter .6s both ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .typing > span, .voice-dot { animation: none !important; opacity: 1; }
+}
