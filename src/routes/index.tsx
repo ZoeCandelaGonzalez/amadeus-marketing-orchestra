@@ -127,7 +127,7 @@ const AREAS = [
   { name: "Marca", tag: "la partitura", cls: "bg-borgona text-tiza", dot: "bg-borgona", items: ["Naming", "Identidad visual", "Manual de marca", "Papelería", "Packaging", "Sitio web"], start: 0 },
   { name: "Comunidad", tag: "la voz", cls: "bg-peonia text-grafito", dot: "bg-peonia", items: ["Estrategia y calendario de contenido", "Diseño de piezas", "Reels y carruseles", "Gestión de comentarios y mensajes"], start: 2 },
   { name: "Pauta", tag: "el volumen", cls: "bg-verdigris text-grafito", dot: "bg-verdigris", items: ["Campañas en Meta, Google y TikTok", "Creatividades", "Seguimiento de conversiones", "Optimización semanal del gasto"], start: 4 },
-  { name: "CRM", tag: "la memoria", cls: "bg-grafito text-tiza", dot: "bg-grafito", items: ["Embudos y etiquetas", "Integración con WhatsApp Business", "Formularios y landing pages", "Automatizaciones y reportes"], start: 1 },
+  { name: "CRM e Ia", tag: "la memoria", cls: "border-2 border-tiza/20 bg-tiza/5 text-tiza", dot: "bg-tiza", items: ["Embudos y etiquetas", "Integración con WhatsApp Business", "Formularios y landing pages", "Automatizaciones y reportes"], start: 1 },
 ];
 
 function Voices() {
@@ -446,7 +446,14 @@ function FloatingWA() {
       aria-label="Escribinos por WhatsApp"
       className="bubble-r fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center bg-verdigris text-grafito shadow-lg transition-transform duration-200 hover:scale-110 active:scale-95"
     >
-    
+      <svg
+        viewBox="0 0 24 24"
+        className="h-7 w-7"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z" />
+      </svg>
     </a>
   );
 }
