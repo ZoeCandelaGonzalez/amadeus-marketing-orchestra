@@ -219,11 +219,11 @@ const DEMOS: Record<string, Msg[]> = {
 
 function Demo() {
   const tabs = Object.keys(DEMOS);
-  const [tab, setTab] = useState(tabs[0]);
+  const [tab, setTab] = useState<string>(tabs[0] ?? "Inmobiliaria");
   const [shown, setShown] = useState(0);
   const [typing, setTyping] = useState(false);
   const [run, setRun] = useState(0);
-  const msgs = DEMOS[tab];
+  const msgs: Msg[] = DEMOS[tab] ?? [];
 
   useEffect(() => {
     setShown(0);
@@ -371,7 +371,7 @@ function Report() {
           </div>
           <div className="mt-6 flex h-40 items-end gap-2" role="img" aria-label="Gráfico de barras de consultas por semana, datos de ejemplo">
             {bars.map((b, i) => (
-              <div key={i} className={`flex-1 rounded-t-md ${i > 0 && b < bars[i - 1] ? "bg-borgona" : "bg-verdigris"}`} style={{ height: `${b}%` }} />
+              <div key={i} className={`flex-1 rounded-t-md ${i > 0 && b < (bars[i - 1] ?? 0) ? "bg-borgona" : "bg-verdigris"}`} style={{ height: `${b}%` }} />
             ))}
           </div>
           <p className="mt-2 text-sm">Consultas por semana</p>
