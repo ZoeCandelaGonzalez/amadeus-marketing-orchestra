@@ -56,13 +56,7 @@ function Logo({ light = false }: { light?: boolean }) {
   );
 }
 
-function Spark({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden>
-      <path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z" fill="currentColor" />
-    </svg>
-  );
-}
+
 
 function Btn({ href, children, variant = "primary" }: { href: string; children: React.ReactNode; variant?: "primary" | "ghost" | "light" }) {
   const v = {
@@ -106,7 +100,7 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-5 pb-20 pt-32 sm:pt-40">
-      <Spark className="absolute right-6 top-28 h-8 w-8 text-peonia sm:right-24 sm:h-14 sm:w-14" />
+  
       <div className="mx-auto max-w-6xl">
         <p className={`${display} mb-6 text-sm font-semibold text-borgona`}>@amadeus.ti · agencia de marketing digital</p>
         <h1 className={`${display} max-w-5xl text-[3.2rem] font-extrabold leading-[0.95] tracking-tight text-grafito sm:text-7xl lg:text-[7rem]`}>
@@ -116,7 +110,7 @@ function Hero() {
           <div className="hidden md:block" />
           <div>
             <p className="text-xl leading-relaxed sm:text-2xl">
-              Somos Amadeus, una agencia de marketing digital que junta marca, comunidad, pauta y CRM en un mismo equipo, con un mismo plan y un solo reporte.
+              Somos Amadeus, una agencia de marketing digital que reúne estrategia, contenido, publicidad y CRM en un mismo equipo, para que tengas todo centralizado y puedas ver los resultados en un solo lugar.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Btn href={WA}>Pedí tu diagnóstico</Btn>
@@ -408,7 +402,7 @@ function FAQ() {
 function Contact() {
   return (
     <section id="contacto" className="relative overflow-hidden bg-borgona px-5 py-24 text-tiza">
-      <Spark className="absolute bottom-10 right-8 h-10 w-10 text-peonia" />
+    
       <div className="mx-auto max-w-6xl">
         <h2 className={`${display} max-w-4xl text-5xl font-extrabold leading-[0.95] sm:text-7xl`}>Contanos de tu negocio<span className="text-peonia">.</span></h2>
         <p className="mt-5 max-w-xl text-xl">Arrancamos con un diagnóstico: vemos dónde estás y qué voz te falta.</p>
@@ -452,14 +446,7 @@ function FloatingWA() {
       aria-label="Escribinos por WhatsApp"
       className="bubble-r fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center bg-verdigris text-grafito shadow-lg transition-transform duration-200 hover:scale-110 active:scale-95"
     >
-      <svg
-        viewBox="0 0 24 24"
-        className="h-7 w-7"
-        fill="currentColor"
-        aria-hidden="true"
-      >
-        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z" />
-      </svg>
+    
     </a>
   );
 }
