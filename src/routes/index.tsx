@@ -23,12 +23,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WA_NUMBER = "[WHATSAPP]";
-const MAIL = "[MAIL]";
-const LINKEDIN = "[LINKEDIN]";
+const WA_NUMBER = "https://api.whatsapp.com/send?phone=543764210094&text=Hola!%20Quiero%20automatizar%20mi%20negocio";
+const LINKEDIN = "https://www.linkedin.com/company/amadeus-marketing";
 const IG = "https://instagram.com/amadeus.ti";
-const WA = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hola, quiero pedir un diagnóstico para mi negocio")}`;
-
+const WA = "https://api.whatsapp.com/send?phone=543764210094&text=Hola!%20Quiero%20automatizar%20mi%20negocio";
 const display = "font-[family-name:var(--font-display)]";
 
 function Dots({ className = "", accent = 2 }: { className?: string; accent?: number }) {
@@ -416,7 +414,6 @@ function Contact() {
         <p className="mt-5 max-w-xl text-xl">Arrancamos con un diagnóstico: vemos dónde estás y qué voz te falta.</p>
         <a href={WA} target="_blank" rel="noopener" className={`bubble mt-10 inline-flex bg-tiza px-8 py-5 ${display} text-xl font-extrabold text-grafito hover:bg-peonia sm:text-2xl`}>Escribinos por WhatsApp</a>
         <ul className={`${display} mt-12 grid gap-4 font-semibold sm:grid-cols-3`}>
-          <li><a href={`mailto:${MAIL}`} className="underline underline-offset-4">{MAIL}</a></li>
           <li><a href={IG} target="_blank" rel="noopener" className="underline underline-offset-4">Instagram · @amadeus.ti</a></li>
           <li><a href={LINKEDIN} target="_blank" rel="noopener" className="underline underline-offset-4">LinkedIn</a></li>
         </ul>
@@ -436,7 +433,6 @@ function Footer() {
         <div className={`${display} flex flex-wrap gap-5 text-sm font-semibold`}>
           <a href={IG} target="_blank" rel="noopener">Instagram</a>
           <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn</a>
-          <a href={`mailto:${MAIL}`}>Mail</a>
           <span className="text-tiza/70">© Amadeus</span>
         </div>
       </div>
@@ -445,9 +441,23 @@ function Footer() {
 }
 
 function FloatingWA() {
+  const whatsappUrl =
+    "https://api.whatsapp.com/send?phone=543764210094&text=Hola!%20Quiero%20automatizar%20mi%20negocio";
+
   return (
-    <a href={WA} target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp" className="bubble-r fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center bg-verdigris text-grafito shadow-lg">
-      <svg viewBox="0 0 24 24" className="h-7 w-7" fill="currentColor" aria-hidden>
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Escribinos por WhatsApp"
+      className="bubble-r fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center bg-verdigris text-grafito shadow-lg transition-transform duration-200 hover:scale-110 active:scale-95"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="h-7 w-7"
+        fill="currentColor"
+        aria-hidden="true"
+      >
         <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z" />
       </svg>
     </a>
@@ -464,7 +474,7 @@ function Index() {
         <Agents />
         <OneTeam />
         <Method />
-        <Report />
+        {/* <Report /> */}
         <FAQ />
         <Contact />
       </main>
